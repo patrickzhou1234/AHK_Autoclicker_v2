@@ -10,10 +10,11 @@ game_title = Lunar Client 1.8.9 (v2.7.2-2324)
 f::
 Lclickeron := !Lclickeron
 Gui +AlwaysOnTop -Caption +Border
-Gui, Font, S10
-ifequal Lclickeron, 0, Gui, Add, Text,, Left autoclicker currently set to false
-ifequal Lclickeron, 1, Gui, Add, Text,, Left autoclicker currently set to true
-Gui, Show, NA
+Gui, Color, 0x05a8ff
+Gui, Font, S20
+ifequal Lclickeron, 0, Gui, Add, Text,, Left autoclicker turned off
+ifequal Lclickeron, 1, Gui, Add, Text,, Left autoclicker turned on
+Gui, Show, x0 y0 NA
 Sleep, 1000
 Gui, Destroy
 Return
@@ -21,15 +22,16 @@ Return
 g::
 Rclickeron := !Rclickeron
 Gui +AlwaysOnTop -Caption +Border
-Gui, Font, S10
-ifequal Rclickeron, 0, Gui, Add, Text,, Right autoclicker currently set to false
-ifequal Rclickeron, 1, Gui, Add, Text,, Right autoclicker currently set to true
-Gui, Show, NA
+Gui, Color, 0x05a8ff
+Gui, Font, S20
+ifequal Rclickeron, 0, Gui, Add, Text,, Right autoclicker turned off
+ifequal Rclickeron, 1, Gui, Add, Text,, Right autoclicker turned on
+Gui, Show, x0 y0 NA
 Sleep, 1000
 Gui, Destroy
 Return
 
-RButton::
+*RButton::
 if (Rclickeron) {
 	While GetKeyState("RButton","P")
 	{
@@ -50,7 +52,7 @@ if (Rclickeron) {
 }
 return
 
-LButton::
+*LButton::
 if (Lclickeron) {
 	While GetKeyState("LButton","P")
 	{
