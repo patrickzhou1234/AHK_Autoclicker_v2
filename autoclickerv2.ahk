@@ -4,7 +4,7 @@ SetWorkingDir, %A_ScriptDir%
 
 global Lclickeron := false, Rclickeron := false
 global i := 80, j := 60
-game_title = Lunar Client 1.8.9 (v2.10.1-2335)
+game_title = Lunar Client 1.8.9 (v2.10.2-2336)
 
 #If WinActive(game_title)
 f::
