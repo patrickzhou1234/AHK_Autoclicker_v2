@@ -4,7 +4,7 @@ SetWorkingDir, %A_ScriptDir%
 
 global Lclickeron := false, Rclickeron := false
 global i := 80, j := 60
-game_title = Lunar Client 1.8.9 (v2.10.2-2336)
+game_title = Lunar Client 1.8.9 (v2.10.3-2336)
 
 #If WinActive(game_title)
 f::
@@ -48,9 +48,15 @@ if (Rclickeron) {
 	i := 80
 	j := 60
 } else {
-	Click, Right
+	Send {RButton down}
 }
 return
+
+*RButton up::
+if (!Rclickeron) {
+	Send {RButton up}
+}
+Return
 
 *LButton::
 if (Lclickeron) {
@@ -69,7 +75,13 @@ if (Lclickeron) {
 	i := 80
 	j := 60
 } else {
-	Click, Left
+	Send {LButton down}
 }
 return
+
+*LButton up::
+if (!Lclickeron) {
+	Send {LButton up}
+}
+Return
 #If
