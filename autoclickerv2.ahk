@@ -1,10 +1,11 @@
 #SingleInstance, Force
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
+SetTitleMatchMode, 2
 
 global Lclickeron := false, Rclickeron := false
 global i := 80, j := 60
-game_title = Lunar Client 1.8.9 (v2.10.3-2336)
+game_title = Lunar Client
 
 #If WinActive(game_title)
 f::
